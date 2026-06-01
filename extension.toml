@@ -9,9 +9,13 @@ authors = [
 ]
 repository = "https://github.com/Xavier-Maruff/zed-fortran"
 
-[language_servers.fortls_free]
+[language_servers.fortls]
 name = "fortls"
-language = "Free-Form Fortran"
+languages = ["Free-Form Fortran", "Fixed-Form Fortran"]
+
+[language_servers.fortitude]
+name = "fortitude"
+languages = ["Free-Form Fortran", "Fixed-Form Fortran"]
 
 [grammars.fortran]
 repository = "https://github.com/Xavier-Maruff/tree-sitter-fortran-wasm"
