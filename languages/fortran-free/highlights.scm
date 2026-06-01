@@ -1,92 +1,126 @@
+;; Variable names
 (identifier) @variable
+
+;; Strings
 (string_literal) @string
+
+;; Numbers
 (number_literal) @number
+
+;; Booleans
 (boolean_literal) @boolean
+
+;; Comments
 (comment) @comment
 
+;; Built-in types, e.g. integer, real
 [
  (intrinsic_type)
- "allocatable"
- "attributes"
- "device"
- "dimension"
+ ] @type.builtin
+
+;; Other types
+[
+ "class"
  "endtype"
- "global"
- "grid_global"
- "host"
- "import"
+ "enumerator"
+ "type"
+ ] @type
+
+;; Attributes of types
+[
+ "abstract"
+ "allocatable"
+ "dimension"
+ "extends"
  "in"
  "inout"
  "intent"
  "optional"
  "out"
+ "parameter"
  "pointer"
- "type"
- "value"
- ] @type
-
-[
- "contains"
  "private"
  "public"
- ] @include
+ "target"
+ "value"
+ ] @attribute
 
+;; Use statement specifiers
+[
+ "intrinsic"
+ "non_intrinsic"
+ "only"
+ ] @attribute
+
+;; CUDA-specific attributes
+[
+ "attributes"
+ "device"
+ "global"
+ "grid_global"
+ "host"
+ ] @attribute
+
+;; Attributes of modules
 [
  (none)
+ "contains"
  "implicit"
  ] @attribute
 
+;; Functions, subroutines, and procedures
 [
  "endfunction"
- "endprogram"
+ "endprocedure"
  "endsubroutine"
  "function"
  "procedure"
  "subroutine"
- ] @keyword.function
+ ] @function
 
+;; Enums
+[
+ "endenum"
+ "enum"
+ ] @enum
+
+;; Keywords
 [
  (default)
  (procedure_qualifier)
- "abstract"
  "bind"
  "call"
- "class"
  "continue"
  "cycle"
- "endenum"
- "endinterface"
- "endmodule"
- "endprocedure"
- "endprogram"
- "endsubmodule"
- "enum"
- "enumerator"
+ "end"
  "equivalence"
  "exit"
- "extends"
  "format"
  "goto"
  "include"
- "interface"
- "intrinsic"
- "non_intrinsic"
- "module"
+ "import"
  "namelist"
- "only"
- "parameter"
  "print"
- "procedure"
- "program"
  "read"
+ "return"
  "stop"
- "submodule"
  "use"
  "write"
  ] @keyword
 
-"return" @keyword.return
+;; Program structuring blocks
+[
+ "endinterface"
+ "endmodule"
+ "endprogram"
+ "endsubmodule"
+ "interface"
+ "module"
+ "program"
+ "submodule"
+ ] @keyword
 
+;; Conditionals
 [
  "else"
  "elseif"
@@ -96,15 +130,17 @@
  "if"
  "then"
  "where"
- ] @conditional
+ ] @keyword
 
+;; Loops
 [
  "do"
  "enddo"
  "forall"
  "while"
- ] @repeat
+ ] @keyword
 
+;; Operators
 [
  "*"
  "+"
@@ -149,7 +185,7 @@
  ] @punctuation.delimiter
 
 (parameters
-  (identifier) @parameter)
+  (identifier) @variable.parameter)
 
 (program_statement
   (name) @namespace)
@@ -195,3 +231,5 @@
 
 (derived_type_member_expression
   (type_member) @property)
+
+((identifier) @function (#match? @function "^(int|short|long|ifix|idint|aint|real|float|sngl|dble|dfloat|cmplx|conj|dcmplx|char|max|min|nint|anint|idnint|zext|abs|iabs|mod|sign|isign|dim|idim|len|index|ichar|lge|lgt|lle|llt|imag|sqrt|exp|log|log10|sin|sind|cos|cosd|tan|tand|asin|asind|acos|acosd|atan|atand|atan2|atan2d|sinh|cosh|tanh|iand|ior|not|ieor|ishft|ishftc|ibits|ibitset|btest|ibclr|adjustl|adjustr|all|allocated|any|bit_size|count|cshift|digits|dot_product|eoshift|epsilon|exponent|huge|kind|lbound|len_trim|matmul|maxexponent|maxloc|maxval|merge|minexponent|minloc|minval|nearest|pack|precision|present|product|radix|range|repeat|reshape|rrspacing|scale|scan|selected_int_kind|selected_real_kind|set_exponent|shape|size|spacing|spread|sum|tiny|transfer|transpose|ubound|unpack|verify)$"))
