@@ -10,11 +10,16 @@
 ((function (end_function_statement) @end) @indent)
 
 ;; Conditionals
-((if_statement (end_if_statement) @end) @indent)
-[
-  (else_clause)
-  (elseif_clause)
-] @outdent
+; This was very tricky to implement
+; due to quirks of the current grammar
+; and a lack of transparency of tag mechanics
+; from Zed.
+(if_statement "then" @start) @indent
+(if_statement (elseif_clause "then" @start)) @indent
+(if_statement (else_clause "else" @start)) @indent
+(if_statement (elseif_clause) @end @outdent) @indent
+(if_statement (else_clause) @end @outdent) @indent
+(if_statement (end_if_statement) @end) @indent
 
 ;; Loops
 ((do_loop_statement (end_do_loop_statement) @end) @indent)
