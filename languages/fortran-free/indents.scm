@@ -21,6 +21,17 @@
 (if_statement (else_clause) @end @outdent) @indent
 (if_statement (end_if_statement) @end) @indent
 
+;; Cases
+; Similar story as conditionals
+; But cases are indented once
+; Case bodies are indented twice
+(select_case_statement (selector ")" @start)) @indent
+(select_case_statement (case_statement ")" @start)) @indent
+(select_case_statement (case_statement (default) @start)) @indent
+(select_case_statement (case_statement) @end) @indent
+(select_case_statement (case_statement) (case_statement) @end @outdent) @indent
+(select_case_statement (end_select_statement) @end) @indent
+
 ;; Loops
 ((do_loop_statement (end_do_loop_statement) @end) @indent)
 ((where_statement (end_where_statement) @end) @indent)
