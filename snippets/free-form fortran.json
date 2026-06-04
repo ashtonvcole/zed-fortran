@@ -1,0 +1,239 @@
+{
+  "If Construct": {
+    "prefix": "if",
+    "body": [
+      "if (${1:condition}) then$0",
+      "end if"
+    ]
+  },
+
+  "Labeled If Construct": {
+    "prefix": "if",
+    "body": [
+      "${1:label}: if (${2:condition}) then$0",
+      "end if ${1:label}"
+    ]
+  },
+
+  "Else If Clause": {
+    "prefix": "else if",
+    "body": [
+      "else if (${1:condition}) then$0",
+    ]
+  },
+
+  "Elseif Clause": {
+    "prefix": "elseif",
+    "body": [
+      "elseif (${1:condition}) then$0",
+    ]
+  },
+
+  "Else Clause": {
+    "prefix": "else",
+    "body": [
+      "else$0",
+    ]
+  },
+
+  "Inline If Statement": {
+    "prefix": "if",
+    "body": ["if (${1:condition}) $0"]
+  },
+
+  "Ternary Expression": {
+    "prefix": "[(",
+    "body": ["[( ${1:condition} ? ${2:expression_if_true} : ${0:expression_if_false} )]"]
+  },
+
+  "Where Construct": {
+    "prefix": "where",
+    "body": [
+      "where (${1:condition})$0",
+      "end where"
+    ]
+  },
+
+  "Labeled Where Construct": {
+    "prefix": "where",
+    "body": [
+      "${1:label}: where (${2:condition})$0",
+      "end where ${1:label}"
+    ]
+  },
+
+  "Else Where Clause": {
+    "prefix": "else where",
+    "body": [
+      "else where (${1:condition})$0",
+    ]
+  },
+
+  "Elsewhere Clause": {
+    "prefix": "elsewhere",
+    "body": [
+      "elsewhere (${1:condition})$0",
+    ]
+  },
+
+  "Base Case Else Where Clause": {
+    "prefix": "else where",
+    "body": [
+      "else where$0",
+    ]
+  },
+
+  "Base Case Elsewhere Clause": {
+    "prefix": "elsewhere",
+    "body": [
+      "elsewhere$0",
+    ]
+  },
+
+  "Inline Where Statement": {
+    "prefix": "where",
+    "body": ["where (${1:condition}) $0"]
+  },
+
+  "Select Case Construct": {
+    "prefix": "select case",
+    "body": [
+      "select case$0",
+      "end select"
+    ]
+  },
+
+  "Labeled Select Case Construct": {
+    "prefix": "select case",
+    "body": [
+      "${1:label}: select case$0",
+      "end select ${1:label}"
+    ]
+  },
+
+  "Case Clause": {
+    "prefix": "case",
+    "body": [
+      "case (${1:selector})$0"
+    ]
+  },
+
+  "Base Case Clause": {
+    "prefix": "case default",
+    "body": [
+      "case default$0"
+    ]
+  },
+
+  "Derived Type Construct": {
+    "prefix": "type",
+    "body": [
+      "type :: ${1:name}",
+      "end type ${1:name}"
+    ]
+  },
+
+  "Do Loop": {
+    "prefix": "do",
+    "body": [
+      "do ${1:i} = ${2:start}, ${3:stop}$0",
+      "end do"
+    ]
+  },
+
+  "Labeled Do Loop": {
+    "prefix": "do",
+    "body": [
+      "${1:label}: do ${2:i} = ${3:start}, ${4:stop}$0",
+      "end do ${1:label}"
+    ]
+  },
+
+  "Function Block": {
+    "prefix": "function",
+    "body": [
+      "function ${1:name}(${2:args}) result(${3:res})",
+      "    implicit none$0",
+      "end function ${1:name}"
+    ]
+  },
+
+  "Subroutine Block": {
+    "prefix": "subroutine",
+    "body": [
+      "subroutine ${1:name}(${2:args})",
+      "    implicit none$0",
+      "end subroutine ${1:name}"
+    ]
+  },
+
+  "Module Procedure Block": {
+    "prefix": "subroutine",
+    "body": [
+      "module procedure ${1:name}",
+      "    implicit none$0",
+      "end procedure ${1:name}"
+    ]
+  },
+
+  "Interface Block": {
+    "prefix": "interface",
+    "body": [
+      "interface$0",
+      "end interface"
+    ]
+  },
+
+  "Named Interface Block": {
+    "prefix": "interface",
+    "body": [
+      "interface {$1:name}",
+      "    $0",
+      "end interface {$1:name}"
+    ]
+  },
+
+  "Abstract Interface Block": {
+    "prefix": "abstract interface",
+    "body": [
+      "abstract interface$0",
+      "end interface"
+    ]
+  },
+
+  "Program Block": {
+    "prefix": "program",
+    "body": [
+      "program ${1:name}",
+      "    implicit none$0",
+      "end program ${1:name}"
+    ]
+  },
+
+  "Module Block": {
+    "prefix": "module",
+    "body": [
+      "module ${1:name}$0",
+      "    implicit none$0",
+      "end module ${1:name}"
+    ]
+  },
+
+  "Submodule Block": {
+    "prefix": "submodule",
+    "body": [
+      "submodule (${1:parent}) ${2:name}$0",
+      "    implicit none$0",
+      "end submodule ${2:name}"
+    ]
+  },
+
+  "Subsubmodule Block": {
+    "prefix": "submodule",
+    "body": [
+      "submodule (${1:ancestor}:${2:parent}) ${3:name}$0",
+      "    implicit none$0",
+      "end submodule ${3:name}"
+    ]
+  }
+}

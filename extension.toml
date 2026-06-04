@@ -8,6 +8,7 @@ authors = [
     "John Makowski <brickcodes@proton.me>",
 ]
 repository = "https://github.com/Xavier-Maruff/zed-fortran"
+snippets = ["snippets/free-form fortran.json"]
 
 [language_servers.fortls]
 name = "fortls"
