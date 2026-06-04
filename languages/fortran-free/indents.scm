@@ -21,6 +21,15 @@
 (if_statement (else_clause) @end @outdent) @indent
 (if_statement (end_if_statement) @end) @indent
 
+;; Where
+; Similar story as conditionals
+(where_statement (parenthesized_expression ")" @start)) @indent
+(where_statement (elsewhere_clause (parenthesized_expression ")" @start))) @indent
+(where_statement (elsewhere_clause "elsewhere" @start)) @indent
+(where_statement (elsewhere_clause "where" @start)) @indent
+(where_statement (elsewhere_clause) @end @outdent) @indent
+(where_statement (end_where_statement) @end) @indent
+
 ;; Cases
 ; Similar story as conditionals
 ; But cases are indented once
@@ -34,7 +43,6 @@
 
 ;; Loops
 ((do_loop_statement (end_do_loop_statement) @end) @indent)
-((where_statement (end_where_statement) @end) @indent)
 
 ;; Derived types
 ((derived_type_definition (end_type_statement) @end) @indent)
