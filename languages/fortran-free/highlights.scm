@@ -110,13 +110,16 @@
 
 ;; Program structuring blocks
 [
+ "case"
  "endinterface"
  "endmodule"
  "endprogram"
+ "endselect"
  "endsubmodule"
  "interface"
  "module"
  "program"
+ "select"
  "submodule"
  ] @keyword
 

@@ -93,7 +93,7 @@
   "Select Case Construct": {
     "prefix": "select case",
     "body": [
-      "select case$0",
+      "select case (${1:selector})$0",
       "end select"
     ]
   },
@@ -101,7 +101,7 @@
   "Labeled Select Case Construct": {
     "prefix": "select case",
     "body": [
-      "${1:label}: select case$0",
+      "${1:label}: select case (${2:selector})$0",
       "end select ${1:label}"
     ]
   },
@@ -109,7 +109,7 @@
   "Case Clause": {
     "prefix": "case",
     "body": [
-      "case (${1:selector})$0"
+      "case (${1:range})$0"
     ]
   },
 
