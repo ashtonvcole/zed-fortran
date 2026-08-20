@@ -208,7 +208,7 @@
   "Module Block": {
     "prefix": "module",
     "body": [
-      "module ${1:name}$0",
+      "module ${1:name}",
       "    implicit none$0",
       "end module ${1:name}"
     ]
@@ -217,7 +217,7 @@
   "Submodule Block": {
     "prefix": "submodule",
     "body": [
-      "submodule (${1:parent}) ${2:name}$0",
+      "submodule (${1:parent}) ${2:name}",
       "    implicit none$0",
       "end submodule ${2:name}"
     ]
@@ -226,7 +226,7 @@
   "Subsubmodule Block": {
     "prefix": "submodule",
     "body": [
-      "submodule (${1:ancestor}:${2:parent}) ${3:name}$0",
+      "submodule (${1:ancestor}:${2:parent}) ${3:name}",
       "    implicit none$0",
       "end submodule ${3:name}"
     ]
